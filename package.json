@@ -4,6 +4,21 @@
   "private": true,
   "description": "Monorepo for an AI video agent that orchestrates research, beat analysis, and Premiere Pro editing.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylphiette269/Premiere--agent.git"
+  },
+  "homepage": "https://github.com/sylphiette269/Premiere--agent",
+  "bugs": {
+    "url": "https://github.com/sylphiette269/Premiere--agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "agent",
+    "premiere-pro",
+    "video-editing",
+    "ai-agent"
+  ],
   "type": "module",
   "engines": {
     "node": ">=18"

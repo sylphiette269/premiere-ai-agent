@@ -1,19 +1,19 @@
 # audio-beat-mcp
 
-`audio-beat-mcp` is the new audio control layer.
+`audio-beat-mcp` 是 `Premiere--agent` monorepo 里的音频节拍控制层。
 
-It does exactly three things:
+它只负责三件事：
 
-1. Analyze beats and transient hits from audio
-2. Turn that timing data into a Premiere-friendly edit plan
-3. Generate tool-call arguments for an external `premiere-mcp`
+1. 分析音频里的节拍、重拍和瞬态峰值
+2. 把这些时间信号转成 Premiere 友好的剪辑计划
+3. 为外部 `premiere-mcp` 生成工具调用参数
 
-It does not control Premiere Pro directly. Execution stays in `premiere-mcp/`.
+它**不直接控制 Premiere Pro**。真正的时间线写入仍由 `packages/premiere-mcp/` 执行。
 
-## Architecture
+## 架构
 
 ```text
-AI client
+AI client / agent
   -> audio-beat-mcp
      -> ../premiere-mcp/python/analyze.py
      -> beat data / edit plan / Premiere tool calls
@@ -24,63 +24,50 @@ AI client
 ## Tools
 
 - `analyze_music_beats`
-  - input: local audio path
-  - output: BPM, `beatTimes`, `onsetTimes`, `energyPeaks`
+  读取本地音频，输出 `BPM`、`beatTimes`、`onsetTimes`、`energyPeaks`
 - `plan_pr_editing`
-  - input: beat analysis result
-  - output: marker plan, cut points, scale-pulse animation plan
+  把节拍分析结果转成 marker 计划、切点和 scale pulse 动画建议
 - `generate_pr_commands`
-  - input: edit plan plus Premiere context
-  - output: argument arrays for `add_marker`, `add_keyframe`, and `set_keyframe_interpolation`
+  把编辑计划翻译成 `premiere-mcp` 可直接消费的工具调用参数
 
-## Dependency
+## 依赖
 
-By default this project reuses `../premiere-mcp/python/analyze.py`.
+默认会复用同仓里的 `packages/premiere-mcp/python/analyze.py`。
 
-Install the Python requirements from that project first:
+先安装那边的 Python 依赖：
 
 ```bash
-cd ../premiere-mcp
+cd packages/premiere-mcp
 pip install -r python/requirements.txt
 ```
 
-Optional overrides:
+可选环境变量：
 
 - `AUDIO_BEAT_MCP_PYTHON`
 - `AUDIO_BEAT_MCP_ANALYZE_SCRIPT`
 
-## Local Run
+## 本地运行
+
+在 monorepo 根目录：
 
 ```bash
+npm install
+npm run build --workspace packages/audio-beat-mcp
+npm run test --workspace packages/audio-beat-mcp
+```
+
+如果单独进入包目录：
+
+```bash
+cd packages/audio-beat-mcp
 npm install
 npm run build
 npm test
 node dist/index.js
 ```
 
-## MCP Config Example
+## 边界
 
-```json
-{
-  "mcpServers": {
-    "audio-beat": {
-      "command": "node",
-      "args": ["E:/作业1/audio-beat-mcp/dist/index.js"],
-      "env": {
-        "AUDIO_BEAT_MCP_PYTHON": "python",
-        "AUDIO_BEAT_MCP_ANALYZE_SCRIPT": "E:/作业1/premiere-mcp/python/analyze.py"
-      }
-    },
-    "premiere": {
-      "command": "node",
-      "args": ["E:/作业1/premiere-mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-## Boundary
-
-- `audio-beat-mcp` owns analysis, planning, and command generation
-- `premiere-mcp` owns actual marker creation, keyframe writes, and interpolation updates
-- To affect a real timeline, feed `generate_pr_commands` output into `premiere-mcp`
+- `audio-beat-mcp` 负责分析、规划和命令生成
+- `premiere-mcp` 负责真正的 marker、keyframe 和插值写入
+- 要影响真实时间线，必须把输出继续交给 `premiere-mcp`

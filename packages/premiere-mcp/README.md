@@ -253,23 +253,23 @@ npm run cleanup:tmp -- --root "/path/to/project" --temp-root "%TEMP%" --bridge-d
 
 ## 仓库内本地 Skills
 
-这些 skills 放在仓库里，不依赖全局目录：
+这些 skills 现在位于 monorepo 根目录 `.codex/skills/`，不依赖全局目录：
 
-- `premiere-mcp/.codex/skills/premiere-reference-migration/`
-- `premiere-mcp/.codex/skills/premiere-bridge-verification/`
-- `premiere-mcp/.codex/skills/premiere-doc-sync/`
-- `premiere-mcp/.codex/skills/premiere-docx-visual-ingest/`
-- `premiere-mcp/.codex/skills/premiere-docx-markdown-normalization/`
-- `premiere-mcp/.codex/skills/premiere-reference-only-media/`
-- `premiere-mcp/.codex/skills/premiere-transition-mapping/`
-- `premiere-mcp/.codex/skills/premiere-skill-first-iteration/`
-- `premiere-mcp/.codex/skills/premiere-edit-reasonability-review/`
-- `premiere-mcp/.codex/skills/premiere-assembly-planning/`
-- `premiere-mcp/.codex/skills/premiere-guide-effect-planning/`
-- `premiere-mcp/.codex/skills/premiere-keyframe-language-mapping/`
-- `premiere-mcp/.codex/skills/premiere-timeline-conformance-review/`
-- `premiere-mcp/.codex/skills/premiere-reference-video-replication/`
-- `premiere-mcp/.codex/skills/premiere-natural-language-edit-planning/`
+- `premiere-reference-migration`
+- `premiere-bridge-verification`
+- `premiere-doc-sync`
+- `premiere-docx-visual-ingest`
+- `premiere-docx-markdown-normalization`
+- `premiere-reference-only-media`
+- `premiere-transition-mapping`
+- `premiere-skill-first-iteration`
+- `premiere-edit-reasonability-review`
+- `premiere-assembly-planning`
+- `premiere-guide-effect-planning`
+- `premiere-keyframe-language-mapping`
+- `premiere-timeline-conformance-review`
+- `premiere-reference-video-replication`
+- `premiere-natural-language-edit-planning`
 
 它们分别用于：
 
@@ -311,4 +311,4 @@ npm run cleanup:tmp -- --root "/path/to/project" --temp-root "%TEMP%" --bridge-d
 - `assemble_product_spot` 与 `build_brand_spot_from_mogrt_and_assets` 现在还会返回 `assemblyReview`；显式转场失败、请求的 MOGRT 失败、主视频轨和计划不一致，或参考视频比对未通过时，不再静默当成成功结果
 - 当 `list_sequence_tracks` 回退到当前活动序列，或主轨检测到 `gap / overlap` 时，这些序列与连续性上下文也会进入 `assemblyReview.summary` 和 `assemblyReview.findings`
 - 当 `referenceBlueprintPath` 存在时，`assemblyReview` 会额外带上 `videoQAReport`
-- 当前仓库尚未配置 npm 发布所需的 `repository`、`homepage`、`bugs` 等元数据
+- 包级与仓库级 `repository`、`homepage`、`bugs` 元数据已补齐，便于公开浏览和 issue 跳转

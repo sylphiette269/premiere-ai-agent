@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "description": "MCP server and CEP bridge for automating Adobe Premiere Pro workflows.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylphiette269/Premiere--agent.git",
+    "directory": "packages/premiere-mcp"
+  },
+  "homepage": "https://github.com/sylphiette269/Premiere--agent/tree/main/packages/premiere-mcp",
+  "bugs": {
+    "url": "https://github.com/sylphiette269/Premiere--agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "premiere-pro",
+    "cep",
+    "video-editing",
+    "video-agent"
+  ],
   "engines": {
     "node": ">=18"
   },

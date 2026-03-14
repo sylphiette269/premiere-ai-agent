@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "description": "MCP server for low-risk reference-video research, local ingestion, signal extraction, and blueprint aggregation.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylphiette269/Premiere--agent.git",
+    "directory": "packages/video-research-mcp"
+  },
+  "homepage": "https://github.com/sylphiette269/Premiere--agent/tree/main/packages/video-research-mcp",
+  "bugs": {
+    "url": "https://github.com/sylphiette269/Premiere--agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "video-research",
+    "reference-video",
+    "blueprint",
+    "video-agent"
+  ],
   "type": "module",
   "engines": {
     "node": ">=18"

@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "description": "MCP controller for audio beat analysis and Premiere Pro edit planning.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sylphiette269/Premiere--agent.git",
+    "directory": "packages/audio-beat-mcp"
+  },
+  "homepage": "https://github.com/sylphiette269/Premiere--agent/tree/main/packages/audio-beat-mcp",
+  "bugs": {
+    "url": "https://github.com/sylphiette269/Premiere--agent/issues"
+  },
+  "keywords": [
+    "mcp",
+    "audio",
+    "beats",
+    "premiere-pro",
+    "video-agent"
+  ],
   "type": "module",
   "engines": {
     "node": ">=18"
