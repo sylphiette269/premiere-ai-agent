@@ -1,6 +1,6 @@
 # Premiere MCP Project Standards
 
-`packages/premiere-mcp/` 是 `Premiere--agent` monorepo 里的 Premiere 执行包。
+`packages/premiere-mcp/` 是 `premiere-mcp-for-claude-code-codex` monorepo 里的 Premiere 执行包。
 这个文档定义它的文档规范、代码格式规范、验证基线和提交规则，避免包内实现与根仓说明继续漂移。
 
 ## 1. 交付边界

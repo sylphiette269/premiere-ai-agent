@@ -5,12 +5,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylphiette269/Premiere--agent.git",
+    "url": "https://github.com/sylphiette269/premiere-mcp-for-claude-code-codex.git",
     "directory": "packages/video-research-mcp"
   },
-  "homepage": "https://github.com/sylphiette269/Premiere--agent/tree/main/packages/video-research-mcp",
+  "homepage": "https://github.com/sylphiette269/premiere-mcp-for-claude-code-codex/tree/main/packages/video-research-mcp",
   "bugs": {
-    "url": "https://github.com/sylphiette269/Premiere--agent/issues"
+    "url": "https://github.com/sylphiette269/premiere-mcp-for-claude-code-codex/issues"
   },
   "keywords": [
     "mcp",

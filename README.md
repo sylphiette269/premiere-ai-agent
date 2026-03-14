@@ -1,6 +1,6 @@
 # Premiere Agent 首映代理
 
-[![CI](https://github.com/sylphiette269/Premiere--agent/actions/workflows/ci.yml/badge.svg)](https://github.com/sylphiette269/Premiere--agent/actions/workflows/ci.yml)
+[![CI](https://github.com/sylphiette269/premiere-mcp-for-claude-code-codex/actions/workflows/ci.yml/badge.svg)](https://github.com/sylphiette269/premiere-mcp-for-claude-code-codex/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 英文说明可见 [README.en.md](./README.en.md)。

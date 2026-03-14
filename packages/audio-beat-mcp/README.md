@@ -1,6 +1,6 @@
 # audio-beat-mcp
 
-`audio-beat-mcp` 是 `Premiere--agent` monorepo 里的音频节拍控制层。
+`audio-beat-mcp` 是 `premiere-mcp-for-claude-code-codex` monorepo 里的音频节拍控制层。
 
 它只负责三件事：
 
