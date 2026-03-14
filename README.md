@@ -5,7 +5,7 @@
 
 英文说明可见 [README.en.md](./README.en.md)。
 
-`Premiere Agent` 这个angent是为了减轻重复性剪辑工作而创造的：
+`Premiere Agent` 这个angent是为了自动化重复性剪辑工作而创造的：
 
 **让 `Claude Code` 或 `Codex` 通过 MCP 工具读取和操控 Adobe Premiere Pro，辅助完成视频粗剪。**
 
