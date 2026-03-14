@@ -37,9 +37,17 @@ if (files.length === 0) {
   process.exit(1);
 }
 
+const nodeTestArgs = ['--test', '--import', 'tsx'];
+
+// GitHub Actions runners are slower and these suites use short-lived temp files
+// and polling windows, so keep file-level execution serial in CI to avoid flake.
+if (process.env.CI === 'true') {
+  nodeTestArgs.push('--test-concurrency=1');
+}
+
 const result = spawnSync(
   process.execPath,
-  ['--test', '--import', 'tsx', ...files],
+  [...nodeTestArgs, ...files],
   { stdio: 'inherit' },
 );
 
