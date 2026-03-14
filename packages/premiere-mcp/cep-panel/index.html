@@ -638,7 +638,7 @@
           <div class="brand-sub">AI 视频粗剪协作面板</div>
         </div>
       </div>
-      <div class="masthead-pill">面板</div>
+      <div class="masthead-pill">粗剪</div>
     </header>
 
     <section class="hero">
@@ -752,19 +752,6 @@
       </div>
     </section>
 
-    <section class="module" id="pluginModule">
-      <div class="module-head">
-        <h2>插件管理器</h2>
-        <span class="module-badge" id="pluginCount">加载中</span>
-      </div>
-      <div class="module-body">
-        <div id="pluginList" style="display:grid;gap:8px;"></div>
-        <div class="note" style="margin-top:12px;">
-          第三方插件通过 <code>plugin_register</code> MCP 工具注册，AI 可通过 <code>plugin_call</code> 调用已启用插件的方法。
-        </div>
-      </div>
-    </section>
-
     <section class="module">
       <div class="module-head">
         <h2>活动日志</h2>
@@ -789,13 +776,9 @@
   <script src="js/CSInterface.js"></script>
   <script src="js/bridge-config.js"></script>
   <script src="js/bridge-ui.js"></script>
-  <script src="js/plugin-registry.js"></script>
   <script src="js/panel-core.js"></script>
   <script src="js/panel-scripts.js"></script>
   <script src="js/panel-runtime.js"></script>
   <script src="js/panel.js?v=20260311split1"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
-    if (typeof pluginRegistryUI !== "undefined") pluginRegistryUI.start();
-  });</script>
 </body>
 </html>
