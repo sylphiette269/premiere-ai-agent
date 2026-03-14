@@ -98,17 +98,26 @@
     }
 
     .brand-mark {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
       color: var(--accent);
-      border: 1px solid rgba(228, 107, 45, 0.22);
-      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(17, 15, 11, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 237, 227, 0.92));
       box-shadow: var(--shadow-soft);
+    }
+
+    .brand-mark svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .brand-mark .mark-secondary {
+      opacity: 0.38;
     }
 
     .brand-text {
@@ -617,7 +626,13 @@
   <div class="shell shell-editorial">
     <header class="masthead">
       <div class="brand-lockup">
-        <div class="brand-mark">✳</div>
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <rect x="3.5" y="5" width="17" height="14" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+            <path class="mark-secondary" d="M7.5 7.5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <path d="M10.5 10h5.5M10.5 13h7M10.5 16h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+        </div>
         <div class="brand-text">
           <div class="brand-name">PR MCP</div>
           <div class="brand-sub">Premiere 自动化控制面板</div>
