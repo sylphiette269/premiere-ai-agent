@@ -1,37 +1,25 @@
 # AGENTS.md
 
-## Project Scope
+## Delivery Shape
 
-This repository is a local Adobe Premiere Pro automation project.
-The runtime shape is:
+- Root repo: `video-agent` monorepo
+- Tool packages live in `packages/`
+- Agent orchestration lives in `agent/`, `cli/`, and `scenarios/`
 
-```text
-TypeScript MCP server -> CEP bridge -> Premiere Pro
-```
+## Working Rules
 
-It is not a web app, not a hosted API, and not a cloud job system.
+- Keep `packages/premiere-mcp/` as the Premiere execution layer
+- Keep `packages/audio-beat-mcp/` and `packages/video-research-mcp/` as reusable tool layers
+- Put cross-package orchestration in root-level `agent/`
+- Prefer adapting existing package APIs over re-implementing their logic at the root
+- When adding a new scenario, keep it runnable from `scenarios/` and traceable through `agent/`
 
-## Startup Order
+## Verification
 
-1. Read `README.md`.
-2. Start the server with `node --import tsx src/index.ts` for development or `node dist/index.js` after build.
-3. In an MCP client, read resource `premiere://mcp/agent-guide`.
-4. Read prompt `operate_premiere_mcp`.
-5. For complex editing tasks, prefer `agent_task` before direct write tools.
-
-## Guardrails
-
-- Treat `build_timeline_from_xml` as disabled unless the repo explicitly re-enables it.
-- After important write operations, check read-back and `verification.confirmed`.
-- Stop on `blocked`, `VERIFICATION_FAILED`, `CRITIC_FAILED`, or `TOOL_DISABLED`.
-- Do not report completion before `critic_edit_result` passes.
-
-## Common Commands
+Run from the repo root:
 
 ```bash
 npm install
 npm run build
 npm test
-npm run install:cep
-node --import tsx src/index.ts
 ```

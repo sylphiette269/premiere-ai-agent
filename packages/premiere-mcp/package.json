@@ -1,0 +1,68 @@
+{
+  "name": "premiere-mcp",
+  "version": "0.1.0",
+  "description": "MCP server and CEP bridge for automating Adobe Premiere Pro workflows.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "npm run test:node && npm run test:jest",
+    "test:node": "node --test --import tsx test/**/*.test.ts",
+    "test:jest": "jest --runInBand",
+    "install:cep": "node scripts/install-cep-panel.mjs",
+    "convert:docx": "node --import tsx scripts/convert-docx-to-premiere-markdown.mjs",
+    "scan:media": "node --import tsx scripts/scan-media-folder-reference-plan.mjs",
+    "review:edit": "node --import tsx scripts/review-edit-reasonability.mjs",
+    "plan:edit": "node --import tsx scripts/plan-edit-assembly.mjs",
+    "monitor:bridge": "node scripts/monitor-bridge.mjs",
+    "cleanup:tmp": "node scripts/cleanup-workspace-tmp.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "jszip": "^3.10.1",
+    "uuid": "^10.0.0",
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.24.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.3.0",
+    "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "hono": "^4.12.7"
+  },
+  "files": [
+    "dist/",
+    "cep-panel/",
+    "scripts/analyze-audio-track.mjs",
+    "scripts/cleanup-workspace-tmp.mjs",
+    "scripts/convert-docx-to-premiere-markdown.mjs",
+    "scripts/install-cep-panel.mjs",
+    "scripts/monitor-bridge.mjs",
+    "scripts/plan-beat-sync.mjs",
+    "scripts/plan-edit-assembly.mjs",
+    "scripts/recover-windows-cep-bridge.ps1",
+    "scripts/review-edit-reasonability.mjs",
+    "scripts/run-beat-sync-workflow.mjs",
+    "scripts/scan-media-folder-reference-plan.mjs",
+    "python/analyze.py",
+    "python/audio_features.py",
+    "python/audio_utils.py",
+    "python/beat_detector.py",
+    "python/beat_processor.py",
+    "python/faster_whisper_transcribe.py",
+    "python/requirements.txt",
+    "ATTRIBUTION.md",
+    "SECURITY.md"
+  ]
+}

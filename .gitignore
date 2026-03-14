@@ -10,6 +10,7 @@ artifacts/
 *.log
 *.tmp
 *.tsbuildinfo
+.video-agent/
 
 .DS_Store
 Thumbs.db

@@ -1,29 +1,32 @@
 # CLAUDE.md
 
-## Repository Entry
+This repository is now a monorepo for an AI video agent system.
 
-Use this repository as a local Premiere MCP project.
-Recommended reading order:
+## Layout
 
-1. `README.md`
-2. `AGENTS.md`
-3. `docs/PROJECT-STANDARDS.md`
-4. MCP resource `premiere://mcp/agent-guide`
-5. MCP prompt `operate_premiere_mcp`
+- `packages/premiere-mcp/`
+  - Premiere MCP server, CEP panel, bridge protocol, and execution tools
+- `packages/audio-beat-mcp/`
+  - Audio beat analysis and edit-plan helpers
+- `packages/video-research-mcp/`
+  - Reference-video research and blueprint aggregation
+- `agent/`
+  - Gateway, planner, orchestrator, memory, critic, reporter
+- `cli/`
+  - Repo-level command-line entrypoint
+- `scenarios/`
+  - Runnable examples for closed-loop flows
 
-## Execution Guidance
+## Intent
 
-- Prefer structured MCP tools over free-form scripts.
-- For multi-step editing work, call `agent_task` first when available.
-- Verify key writes with read-back before moving on.
-- Only treat the task as complete after `critic_edit_result` passes.
+The root layer should feel like a product:
 
-## Runtime Reminder
+- one entry
+- one execution report
+- one state trail
+- multiple MCP-backed capabilities underneath
 
-The supported local shape is:
+Keep package boundaries clean:
 
-```text
-MCP client -> stdio -> premiere-mcp -> CEP -> Premiere Pro
-```
-
-Keep Node-side bridge settings and CEP-side bridge settings aligned.
+- package code owns tool execution details
+- root agent code owns orchestration and recovery logic

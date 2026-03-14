@@ -4,27 +4,19 @@
     "lib": ["ES2022", "DOM"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "rootDir": ".",
+    "rootDir": "src",
     "outDir": "dist",
     "strict": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
-  "include": [
-    "agent/**/*.ts",
-    "cli/**/*.ts",
-    "scenarios/**/*.ts",
-    "packages/*/src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
-    "dist",
     "node_modules",
-    "packages/*/dist",
-    "packages/*/node_modules",
-    "packages/*/test",
-    "packages/premiere-mcp/src/__tests__"
+    "dist",
+    "src/__tests__/**/*.ts"
   ]
 }
