@@ -28,7 +28,7 @@
     "start": "node dist/index.js",
     "test": "npm run test:node && npm run test:jest",
     "test:node": "node ../../scripts/run-node-tests.mjs test",
-    "test:jest": "jest --runInBand",
+    "test:jest": "node ../../scripts/run-jest-tests.mjs",
     "install:cep": "node scripts/install-cep-panel.mjs",
     "convert:docx": "node --import tsx scripts/convert-docx-to-premiere-markdown.mjs",
     "scan:media": "node --import tsx scripts/scan-media-folder-reference-plan.mjs",

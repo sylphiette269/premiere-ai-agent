@@ -27,8 +27,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
+      - name: Test audio-beat-mcp
+        run: npm run test --workspace packages/audio-beat-mcp
+
+      - name: Test video-research-mcp
+        run: npm run test --workspace packages/video-research-mcp
+
+      - name: Test premiere-mcp node suites
+        run: npm run test:node --workspace packages/premiere-mcp
+
+      - name: Test premiere-mcp jest suites
+        run: npm run test:jest --workspace packages/premiere-mcp
+
+      - name: Test root orchestrator suites
+        run: node scripts/run-node-tests.mjs test
 
       - name: Build
         run: npm run build

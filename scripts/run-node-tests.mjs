@@ -37,17 +37,39 @@ if (files.length === 0) {
   process.exit(1);
 }
 
-const nodeTestArgs = ['--test', '--import', 'tsx'];
+function runNodeTestFile(testFile) {
+  const result = spawnSync(
+    process.execPath,
+    ['--test', '--import', 'tsx', testFile],
+    { stdio: 'inherit' },
+  );
 
-// GitHub Actions runners are slower and these suites use short-lived temp files
-// and polling windows, so keep file-level execution serial in CI to avoid flake.
+  if (result.error) {
+    throw result.error;
+  }
+
+  return result.status ?? 1;
+}
+
 if (process.env.CI === 'true') {
-  nodeTestArgs.push('--test-concurrency=1');
+  for (const file of files) {
+    const displayPath = path.relative(process.cwd(), file);
+    console.error(`[run-node-tests] ${displayPath}`);
+
+    const status = runNodeTestFile(file);
+    if (status !== 0) {
+      // Emit an explicit GitHub annotation so public check-run metadata shows the file.
+      console.error(`::error title=Node test file failed::${displayPath}`);
+      process.exit(status);
+    }
+  }
+
+  process.exit(0);
 }
 
 const result = spawnSync(
   process.execPath,
-  [...nodeTestArgs, ...files],
+  ['--test', '--import', 'tsx', ...files],
   { stdio: 'inherit' },
 );
 
