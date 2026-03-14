@@ -1,0 +1,4 @@
+interface:
+  display_name: "Premiere Keyframe Mapping"
+  short_description: "Translate Premiere motion language into explicit keyframe plans."
+  default_prompt: "Use $premiere-keyframe-language-mapping to convert a Premiere animation request into explicit property keyframes."

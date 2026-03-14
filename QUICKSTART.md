@@ -139,4 +139,5 @@ npm run review:edit -- --docx "D:/brief/需求.docx" --media-json "docs/media.js
 
 - 根仓首页说明见 [README.md](./README.md)
 - 当前已知限制见 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+- 项目 skills 说明见 [SKILLS.md](./SKILLS.md)
 - 如果你准备上传截图，建议放到 `docs/images/`

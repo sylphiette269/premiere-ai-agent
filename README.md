@@ -40,6 +40,7 @@
 
 - 快速开始见 [QUICKSTART.md](./QUICKSTART.md)
 - 已知限制见 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+- 项目 skills 说明见 [SKILLS.md](./SKILLS.md)
 
 ## 你能用它做什么
 
@@ -365,6 +366,7 @@ npm test
 - GitHub Actions CI 已配置，当前以最新 workflow 结果为准
 - 已拆成 `premiere-mcp`、`audio-beat-mcp`、`video-research-mcp` 三层
 - 已有顶层 agent 编排入口
+- 已包含项目本地 skills，目录在 `.codex/skills/`
 - 当前主目标是把“可检查的粗剪闭环”做稳
 
 ## 协作与安全
@@ -373,3 +375,4 @@ npm test
 - 安全问题见 [SECURITY.md](./SECURITY.md)
 - 快速开始见 [QUICKSTART.md](./QUICKSTART.md)
 - 已知限制见 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+- 项目 skills 说明见 [SKILLS.md](./SKILLS.md)

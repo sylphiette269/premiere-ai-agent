@@ -29,3 +29,4 @@ Additional docs:
 
 - Quick start: [QUICKSTART.md](./QUICKSTART.md)
 - Known issues: [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
+- Project skills: [SKILLS.md](./SKILLS.md)
