@@ -10,6 +10,11 @@ Short summary:
 This repository is focused on Windows, rough-cut workflows, local material
 folders, Word briefs, reference videos, and prompt-driven planning.
 
+When paired with
+[`chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp),
+the prompt-driven flow can also let the AI search Douyin or Bilibili for 2 to 3
+reference videos before generating a stronger rough-cut plan.
+
 Primary use cases:
 
 - rough-cut assistance from a Word brief
