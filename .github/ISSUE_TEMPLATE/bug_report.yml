@@ -1,36 +1,36 @@
-name: Bug report
-description: Report a reproducible defect in the MCP server, bridge, or CEP panel
-title: "[Bug] "
+name: 问题反馈
+description: 提交可复现的问题，适用于 MCP 服务、bridge 或 CEP 面板相关故障
+title: "[问题] "
 labels:
   - bug
 body:
   - type: textarea
     id: summary
     attributes:
-      label: Summary
-      description: Describe the observed problem
+      label: 问题概述
+      description: 请简要说明你看到的异常现象
     validations:
       required: true
 
   - type: textarea
     id: steps
     attributes:
-      label: Reproduction
-      description: Exact steps, commands, and inputs
+      label: 复现步骤
+      description: 请写清步骤、命令和输入内容
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior
+      label: 期望结果
     validations:
       required: true
 
   - type: textarea
     id: environment
     attributes:
-      label: Environment
-      description: Node version, OS, Premiere version, and bridge mode if known
+      label: 环境信息
+      description: 请填写 Node 版本、系统版本、Premiere 版本，以及 bridge 模式（如果知道）
     validations:
       required: true

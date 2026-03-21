@@ -1,24 +1,24 @@
-# Premiere AI Agent
+# Premiere MCP 剪辑助手（premiere-ai-agent）
 
 [![CI](https://github.com/sylphiette269/premiere-ai-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/sylphiette269/premiere-ai-agent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 英文说明可见 [README.en.md](./README.en.md)。
 
-`Premiere AI Agent` 不是泛泛的“AI 视频代理”项目。
+`Premiere MCP 剪辑助手` 不是泛泛的“通用视频自动化”项目。
 
 它真正要做的是：
 
-**让 `Claude Code` 或 `Codex` 通过 MCP 工具读取和操控 Adobe Premiere Pro，结合 Word 文档、参考视频、提示词和本地素材目录，辅助完成视频粗剪。**
+**让 `Claude Code`、`Codex` 或 `OpenClaw` 通过 MCP 工具读取和操控 Adobe Premiere Pro，结合 Word 文档、参考视频、提示词和本地素材目录，辅助完成视频剪辑，当前更适合粗剪与初版装配。**
 
 ## 项目特点
 
 这个仓库的设计重点很明确：
 
-- 目标环境改成了 **Windows-first**
-- 客户端重点改成了 **Claude Code / Codex**
+- 目标环境改成了 **优先面向 Windows**
+- 客户端重点改成了 **Claude Code / Codex / OpenClaw**
 - 工作流重点改成了 **视频粗剪**，不是泛化的 Premiere 全能自动化
-- 额外加了 `audio-beat-mcp`、`video-research-mcp` 和顶层 `agent/` 编排层
+- 额外加了 `audio-beat-mcp`、`video-research-mcp` 和顶层工作流编排层
 - 输入方式围绕 **Word 文档、参考视频、提示词、本地素材目录** 四类信息组织
 - 可选配合 [`chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp)，让 AI 在只有提示词时也能先去抖音或哔哩哔哩搜索 2 到 3 个参考视频，再回填更稳的粗剪计划
 
@@ -42,6 +42,8 @@
 - 快速开始见 [QUICKSTART.md](./QUICKSTART.md)
 - 已知限制见 [KNOWN_ISSUES.md](./KNOWN_ISSUES.md)
 - 项目 skills 说明见 [SKILLS.md](./SKILLS.md)
+- 版本记录见 [CHANGELOG.md](./CHANGELOG.md)
+- GitHub Release 模板见 [`.github/RELEASE_TEMPLATE.md`](./.github/RELEASE_TEMPLATE.md)
 
 ## 你能用它做什么
 
@@ -58,7 +60,7 @@
 
 ## 你应该怎么用
 
-你在 `Claude Code` 或 `Codex` 里接入这个仓库提供的 MCP 服务后，给 AI 提供以下信息：
+你在 `Claude Code`、`Codex` 或 `OpenClaw` 里接入这个仓库提供的 MCP 服务后，给 AI 提供以下信息：
 
 1. **素材文件夹目录**
 2. 下面三种输入里的任意一种：
@@ -117,16 +119,16 @@
 
 更适合公开说明的写法是：
 
-> `Premiere AI Agent` 可选配合 `chrome-devtools-mcp` 使用。在只提供提示词的情况下，AI 可以先自行搜索 2 到 3 个抖音或哔哩哔哩参考视频，提炼节奏和结构特征，再结合本地素材目录生成更合适的 Premiere 粗剪计划。
+> `Premiere MCP 剪辑助手` 可选配合 `chrome-devtools-mcp` 使用。在只提供提示词的情况下，AI 可以先自行搜索 2 到 3 个抖音或哔哩哔哩参考视频，提炼节奏和结构特征，再结合本地素材目录生成更合适的 Premiere 粗剪计划。
 
 ## 实际操作步骤
 
 下面这套流程，就是这个项目目前最适合公开展示和实际使用的方式。
 
-### 第 1 步：在 Claude Code 或 Codex 中接入 MCP
+### 第 1 步：在 Claude Code、Codex 或 OpenClaw 中接入 MCP
 
 - 启动本仓库提供的 MCP 服务
-- 在 `Claude Code` 或 `Codex` 中连接这个 MCP
+- 在 `Claude Code`、`Codex` 或 `OpenClaw` 中连接这个 MCP
 - 确认 AI 已经能调用 Premiere 相关工具，而不是只会输出文字建议
 
 ### 第 2 步：告诉 AI 本地素材文件夹目录
@@ -249,7 +251,23 @@ command: node D:/path/to/premiere-ai-agent/packages/premiere-mcp/dist/index.js
 env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
 ```
 
-### 5. 其他 MCP 客户端
+### 5. 接入 OpenClaw
+
+在 OpenClaw 里，本质上也是同一套 MCP 接法：
+
+```text
+command: node D:/path/to/premiere-ai-agent/packages/premiere-mcp/dist/index.js
+env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
+```
+
+说明：
+
+- 入口仍然指向 `packages/premiere-mcp/dist/index.js`
+- bridge 目录仍然要和 Premiere 面板保持一致
+- OpenClaw 改完 MCP 配置后，同样要重启客户端
+- Premiere 里的 `PR MCP` 面板也要保持启动
+
+### 6. 其他 MCP 客户端
 
 其他 MCP 客户端也一样：
 
@@ -262,7 +280,7 @@ env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
 ## 典型使用流程
 
 ```text
-Claude Code / Codex
+Claude Code / Codex / OpenClaw
   -> 连接本仓库提供的 MCP
   -> 告诉 AI 素材文件夹目录
   -> 提供 docx / 参考视频 / 提示词
@@ -311,7 +329,7 @@ npm run agent:dev -- "参考这个视频的节奏做粗剪" --editing-blueprint 
 
 ```text
 repo-root/
-├── agent/                  # 顶层编排、计划、记忆、报告
+├── agent/                  # 顶层工作流编排、计划、记忆、报告
 ├── cli/                    # 命令行入口
 ├── scenarios/              # 最小闭环示例
 ├── packages/
@@ -342,7 +360,7 @@ npm test
 - 根仓 `build` / `test` 命令已接通
 - GitHub Actions CI 已配置，当前以最新 workflow 结果为准
 - 已拆成 `premiere-mcp`、`audio-beat-mcp`、`video-research-mcp` 三层
-- 已有顶层 agent 编排入口
+- 已有顶层工作流编排入口
 - 已包含项目本地 skills，目录在 `.codex/skills/`
 - 当前主目标是把“可检查的粗剪闭环”做稳
 
@@ -362,4 +380,4 @@ npm test
 
 很感谢原作者愿意把这部分工作公开出来。对我来说，这不只是一个可查看的仓库，更像是一份很有帮助的起点，让我在理解 Premiere 与 MCP 的连接方式时少走了一些弯路。
 
-在这些启发的基础上，我再结合自己的使用目标，把当前仓库逐步整理成现在这套更偏向视频粗剪协作的工作流，包括 Word 文档、参考视频、提示词、本地素材目录，以及面向 Claude Code / Codex 的使用方式。
+在这些启发的基础上，我再结合自己的使用目标，把当前仓库逐步整理成现在这套更偏向视频粗剪协作的工作流，包括 Word 文档、参考视频、提示词、本地素材目录，以及面向 Claude Code / Codex / OpenClaw 的使用方式。

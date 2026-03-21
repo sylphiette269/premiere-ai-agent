@@ -1,4 +1,4 @@
-# Premiere AI Agent 中文说明
+# Premiere MCP 剪辑助手 中文说明
 
 中文主文档已经切到根目录 [README.md](./README.md)。
 

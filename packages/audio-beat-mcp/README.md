@@ -1,6 +1,7 @@
 # audio-beat-mcp
 
-`audio-beat-mcp` 是 `premiere-ai-agent` monorepo 里的音频节拍控制层。
+`audio-beat-mcp` 是 `Premiere MCP 剪辑助手` monorepo 里的音频节拍控制层。
+它通常由 `premiere-mcp` 间接调用，也能跟 `Claude Code`、`Codex`、`OpenClaw` 的剪辑链路配合使用。
 
 它只负责三件事：
 
@@ -13,10 +14,10 @@
 ## 架构
 
 ```text
-AI client / agent
+AI 客户端 / 执行器
   -> audio-beat-mcp
      -> ../premiere-mcp/python/analyze.py
-     -> beat data / edit plan / Premiere tool calls
+     -> 节拍数据 / 剪辑计划 / Premiere 工具调用
   -> premiere-mcp
      -> Premiere Pro + CEP
 ```

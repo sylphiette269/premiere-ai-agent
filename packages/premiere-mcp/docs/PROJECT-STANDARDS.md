@@ -1,6 +1,6 @@
-# Premiere MCP Project Standards
+# Premiere MCP 剪辑助手项目规范
 
-`packages/premiere-mcp/` 是 `premiere-ai-agent` monorepo 里的 Premiere 执行包。
+`packages/premiere-mcp/` 是 `Premiere MCP 剪辑助手` monorepo 里的 Premiere 执行包。
 这个文档定义它的文档规范、代码格式规范、验证基线和提交规则，避免包内实现与根仓说明继续漂移。
 
 ## 1. 交付边界
@@ -20,7 +20,7 @@
 
 同步规则：
 
-- tools / resources / prompts 数量以代码或测试结果为准
+- 工具 / 资源 / 提示词 数量以代码或测试结果为准
 - bridge 模式、命令 envelope、安装脚本、恢复脚本变化时，要同步文档
 - 项目内 skills 变化时，要同步 skill 列表和边界说明
 - 默认中文优先；确实需要面向外部英文读者时再补英文摘要

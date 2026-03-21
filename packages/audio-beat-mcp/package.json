@@ -1,7 +1,7 @@
 {
   "name": "audio-beat-mcp",
   "version": "0.1.0",
-  "description": "MCP controller for audio beat analysis and Premiere Pro edit planning.",
+  "description": "音频节拍分析与剪辑规划 MCP 工具，用于生成适合 Premiere 的节奏编辑方案。",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "audio",
     "beats",
     "premiere-pro",
-    "video-agent"
+    "audio-beat"
   ],
   "type": "module",
   "engines": {

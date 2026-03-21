@@ -1,11 +1,12 @@
-# Premiere AI Agent
+# Premiere MCP Editing Assistant
 
 Chinese-first repository documentation lives in [README.md](./README.md).
 
 Short summary:
 
-`Premiere AI Agent` is a Windows-first monorepo for using `Claude Code` or
-`Codex` with MCP tools to drive Adobe Premiere Pro for rough-cut editing.
+`Premiere MCP Rough-Cut Assistant` is a Windows-first monorepo for using
+`Claude Code`, `Codex`, or `OpenClaw` with MCP tools to drive Adobe Premiere
+Pro for rough-cut editing.
 
 This repository is focused on Windows, rough-cut workflows, local material
 folders, Word briefs, reference videos, and prompt-driven planning.
@@ -49,4 +50,4 @@ starting point while I was figuring out the Premiere-to-MCP connection flow.
 
 From there, this repository grew toward its own rough-cut workflow, with a
 stronger focus on Word briefs, reference videos, prompt-driven planning, local
-material folders, and Claude Code / Codex based operation.
+material folders, and Claude Code / Codex / OpenClaw based operation.

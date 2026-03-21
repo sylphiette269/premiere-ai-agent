@@ -1,25 +1,27 @@
-# Security Policy
+# 安全说明
 
-## Supported Scope
+## 重点关注范围
 
-Security issues are most relevant in these areas:
+这个项目的安全问题，主要集中在以下几类位置：
 
-- Premiere bridge file handling
-- local script execution boundaries
-- path validation and file access controls
-- plugin loading and registry behavior
-- secrets handling in external integrations
+- Premiere bridge 文件读写
+- 本地脚本执行边界
+- 路径校验与文件访问控制
+- 插件加载与注册行为
+- 外部集成中的密钥与敏感信息处理
 
-## Reporting
+## 报告方式
 
-If you find a security issue, please avoid filing a public issue with exploit
-details first.
+如果你发现安全问题，请不要一开始就公开提交带利用细节的 issue。
 
-Open a private report through GitHub security reporting if available, or open an
-issue with a minimal description and ask for a private follow-up channel.
+更推荐的做法是：
 
-## Notes
+1. 优先使用 GitHub 的私密安全报告渠道
+2. 如果仓库暂时没有开启私密报告，再发一个极简 issue，只说明“存在安全问题，需要私下沟通”
+3. 不要公开真实 API Key、私有项目文件或本地敏感路径
 
-- This project is designed for local execution, not multi-tenant hosting
-- Public bug reports should avoid sharing real API keys, private project files,
-  or sensitive local paths
+## 额外说明
+
+- 这个项目定位是本地执行，不是多租户托管服务
+- 公开漏洞说明应避免泄露用户真实工程、真实素材和本地目录结构
+- 只要问题涉及 bridge、插件、路径、脚本执行，就应该提高风险等级审视

@@ -1,7 +1,7 @@
 {
   "name": "premiere-mcp",
   "version": "0.1.0",
-  "description": "MCP server and CEP bridge for automating Adobe Premiere Pro workflows.",
+  "description": "Premiere Pro 的 MCP 服务与 CEP 桥接层，用于把剪辑规划真正执行到时间线。",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "premiere-pro",
     "cep",
     "video-editing",
-    "video-agent"
+    "premiere-mcp"
   ],
   "engines": {
     "node": ">=18"

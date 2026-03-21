@@ -2,7 +2,7 @@
   "name": "premiere-ai-agent-workspace",
   "version": "0.1.0",
   "private": true,
-  "description": "MCP-driven Premiere Pro rough-cut agent for Claude Code or Codex using briefs, reference videos, prompts, and local material folders.",
+  "description": "Premiere MCP 剪辑助手，面向 Claude Code、Codex 和 OpenClaw，可结合文档、参考视频、提示词和本地素材目录完成视频剪辑规划与执行，当前更适合粗剪与初版装配。",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,10 +14,11 @@
   },
   "keywords": [
     "mcp",
-    "agent",
+    "premiere-mcp",
     "premiere-pro",
     "video-editing",
-    "ai-agent"
+    "rough-cut",
+    "openclaw"
   ],
   "type": "module",
   "engines": {

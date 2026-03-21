@@ -1,19 +1,16 @@
-# Contributing
+# 参与说明
 
-## Scope
+## 适用范围
 
-This repository is a monorepo.
+这个仓库是一个 monorepo。
 
-- Root-level changes should improve the agent orchestration layer, workspace
-  tooling, shared docs, or CI
-- Package-level changes should stay within the ownership boundary of each
-  package
-- Do not collapse package boundaries by copying logic across packages unless the
-  refactor clearly improves the design
+- 根目录层面的改动，应该服务于顶层工作流编排、工作区工具、共享文档或 CI
+- 包级改动，应尽量留在各自包的职责边界内
+- 除非设计上确实更合理，否则不要为了省事把多个包的逻辑硬拷到一起
 
-## Development Setup
+## 本地开发
 
-From the repository root:
+在仓库根目录执行：
 
 ```bash
 npm install
@@ -21,7 +18,7 @@ npm run build
 npm test
 ```
 
-Useful package-level commands:
+常用的包级命令：
 
 ```bash
 npm run build --workspace packages/premiere-mcp
@@ -30,18 +27,18 @@ npm run build --workspace packages/audio-beat-mcp
 npm run build --workspace packages/video-research-mcp
 ```
 
-## Change Rules
+## 改动规则
 
-- Prefer small, reviewable changes
-- Keep root docs and package docs aligned
-- Preserve the current runtime contracts unless the change intentionally updates
-  them
-- When changing Premiere bridge behavior, verify both code and docs
+- 优先做小而可审查的改动
+- 根仓文档与各包文档要保持同步
+- 除非需求明确要求变更，否则尽量保持当前运行时契约不变
+- 只要改到 Premiere bridge 行为，就同时核对代码和文档
 
-## Pull Requests
+## Pull Request 建议
 
-Please include:
+如果你要提交 Pull Request，描述里至少应写清：
 
-- what changed
-- how it was verified
-- any follow-up work or known limitations
+- 改了什么
+- 怎么验证的
+- 后续还要补什么
+- 当前已知限制是什么

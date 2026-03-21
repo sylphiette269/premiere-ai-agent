@@ -1,26 +1,22 @@
-# Attribution
+# 说明来源
 
-This package is the Premiere execution layer inside the `premiere-ai-agent` monorepo.
+`packages/premiere-mcp/` 是 `Premiere MCP 剪辑助手` monorepo 里的 Premiere 执行层。
 
-## Reference Project
+## 参考来源
 
-Some bridge and MCP integration details in this package reference selected
-content from:
+这个包里的部分 bridge 和 MCP 集成思路，参考过以下公开项目：
 
 - `Adobe_Premiere_Pro_MCP`
-  - Repository: <https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP>
-  - License: MIT
+  - 仓库：<https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP>
+  - 许可证：MIT
 
-Thanks to the original author for making that work public. It helped as an
-early reference point while I was working through the bridge and MCP
-integration details.
+感谢原作者把相关实现公开出来。它曾经帮助我梳理 bridge 和 MCP 集成的起步思路。
 
-This package has since been organized around this repository's own runtime
-shape, CEP bridge, test suite, workflow design, and project-specific tooling.
+后续这个包已经按本仓库自己的运行形态、CEP bridge、测试套件、工作流设计和项目专用工具重新整理。
 
-## Third-Party Runtime Files
+## 第三方运行文件
 
 - `cep-panel/js/CSInterface.js`
-  - Copyright header: Adobe Systems Incorporated
-  - This file is not claimed as original package code
-  - See the file header for Adobe's notice and usage terms
+  - 版权头：Adobe Systems Incorporated
+  - 这个文件不视为本包原创代码
+  - 具体使用条款请以文件头部说明为准

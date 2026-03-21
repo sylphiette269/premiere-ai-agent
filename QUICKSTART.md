@@ -1,4 +1,4 @@
-# Quick Start
+# 快速开始
 
 这里整理的是当前仓库真实可用的 Windows 快速开始流程。
 
@@ -6,7 +6,7 @@
 
 如果你想做的是下面这类事情，这个仓库就是对路的：
 
-- 用 `Claude Code` 或 `Codex` 调用 MCP 工具操控 Premiere Pro
+- 用 `Claude Code`、`Codex` 或 `OpenClaw` 调用 MCP 工具操控 Premiere Pro
 - 根据 Word 文档做视频粗剪
 - 根据参考视频做风格、节奏和结构模仿
 - 根据提示词和本地素材目录，让 AI 先规划，再执行 Premiere 粗剪
@@ -87,7 +87,18 @@ command: node D:/path/to/premiere-ai-agent/packages/premiere-mcp/dist/index.js
 env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
 ```
 
-## 6. 告诉 AI 你要处理什么
+## 6. 接入 OpenClaw
+
+OpenClaw 的接法和其他 MCP 客户端一致，核心仍然是：
+
+```text
+command: node D:/path/to/premiere-ai-agent/packages/premiere-mcp/dist/index.js
+env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
+```
+
+只要保证这两个值和 Premiere 面板里的 bridge 目录一致，OpenClaw 也能走同一套执行链路。
+
+## 7. 告诉 AI 你要处理什么
 
 使用前，至少给 AI 这两类输入：
 
@@ -117,7 +128,7 @@ env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
 再结合这批素材给我一版粗剪计划，确认后再执行 Premiere。
 ```
 
-## 7. 推荐工作顺序
+## 8. 推荐工作顺序
 
 最稳的用法不是直接让 AI 上来就剪，而是按这个顺序来：
 
@@ -129,7 +140,7 @@ env: PREMIERE_TEMP_DIR=C:/pr-mcp-cmd
 6. 再调用 Premiere MCP 真正执行
 7. 人工复核结果并继续精修
 
-## 8. 常用命令
+## 9. 常用命令
 
 根仓：
 

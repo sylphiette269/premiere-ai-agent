@@ -1,27 +1,27 @@
-name: Feature request
-description: Suggest a new capability or workflow improvement
-title: "[Feature] "
+name: 功能建议
+description: 提交新的能力建议或工作流改进建议
+title: "[建议] "
 labels:
   - enhancement
 body:
   - type: textarea
     id: problem
     attributes:
-      label: Problem to solve
-      description: What workflow or limitation is driving this request
+      label: 你想解决什么问题
+      description: 请说明当前卡点、限制或使用场景
     validations:
       required: true
 
   - type: textarea
     id: proposal
     attributes:
-      label: Proposed solution
-      description: Describe the capability you want
+      label: 你希望怎么改
+      description: 请描述你想要的新能力或改进方向
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives considered
-      description: Optional
+      label: 你考虑过的其他方案
+      description: 可选

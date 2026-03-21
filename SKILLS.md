@@ -1,4 +1,4 @@
-# Project Skills
+# 项目技能
 
 这个仓库不是只靠 MCP tools 在工作。
 
@@ -17,7 +17,7 @@
 
 ## 使用方式
 
-如果你在 `Codex`、`Claude Code` 或其他支持仓库内 skill 约定的环境里使用这个项目，这些 skills 可以作为项目本地规则直接参与工作流。
+如果你在 `Codex`、`Claude Code`、`OpenClaw` 或其他支持仓库内 skill 约定的环境里使用这个项目，这些 skills 可以作为项目本地规则直接参与工作流。
 
 它们主要负责：
 
@@ -31,7 +31,7 @@
 ### 编排与闭环
 
 - `premiere-agent-closed-loop`
-  用于把 `premiere-mcp` 从“工具集合”收口成闭环 agent，要求任务分类、research gate、写后验证、critic 审查和结构化失败输出。
+  用于把 `premiere-mcp` 从“工具集合”收口成闭环工作流，要求任务分类、research gate、写后验证、critic 审查和结构化失败输出。
 - `premiere-skill-first-iteration`
   用于处理反复失败、描述不清或难以调试的问题，先把经验沉淀成项目 skill，再继续扩 MCP 行为。
 
@@ -81,7 +81,7 @@
 
 它们分别用于：
 
-- 给支持 agent 描述文件的环境提供更明确的 skill 元信息
+- 给支持工作流描述文件的环境提供更明确的 skill 元信息
 - 补充关键帧语义、属性映射、插值、验证和 still-image fallback 的参考说明
 
 ## 这些 skills 和 MCP tools 的关系
@@ -91,7 +91,7 @@
 ```text
 用户需求
   -> project skills 约束流程
-  -> agent / planner 生成计划
+  -> 工作流规划层生成计划
   -> MCP tools 执行 Premiere 操作
   -> review / verification skills 审查结果
 ```

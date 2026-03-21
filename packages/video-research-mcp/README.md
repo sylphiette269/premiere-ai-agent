@@ -1,6 +1,7 @@
 # video-research-mcp
 
-`video-research-mcp` 是 `premiere-ai-agent` monorepo 里的参考视频研究层。
+`video-research-mcp` 是 `Premiere MCP 剪辑助手` monorepo 里的参考视频研究层。
+它通常由 `premiere-mcp` 间接消费，也能跟 `Claude Code`、`Codex`、`OpenClaw` 的研究链路配合使用。
 
 它的目标不是直接控制 Premiere，而是把参考视频研究过程收敛成稳定的
 `blueprint.json`，供后续剪辑层消费。
@@ -76,7 +77,7 @@ node dist/index.js
 4. `ingest_reference_assets`
 5. `extract_reference_signals`
 6. `aggregate_style_blueprint`
-7. 把产出的 `blueprint.json` 路径交给 `premiere-mcp` 或 root `agent/`
+7. 把产出的 `blueprint.json` 路径交给 `premiere-mcp` 或根仓 `agent/` 工作流目录
 
 ## 限制
 
